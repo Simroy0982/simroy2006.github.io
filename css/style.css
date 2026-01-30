@@ -1,0 +1,917 @@
+/* ===============================
+   CSS VARIABLES (COLOUR SYSTEM)
+================================ */
+:root {
+  --bg-color: #5d789ad2;
+  --primary-color: #20baa3;
+  --accent-color: #22c55e;
+  --dark-color: #172138;
+  --text-color: #334155;
+  --card-bg: #ffffff;
+  --border-color: #364c4f;
+  
+}
+
+/* ===============================
+   RESET & GLOBAL
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: url("../assets/images/background/shot9.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+
+  /* Transparent background WITHOUT affecting text */
+  background: rgba(47, 124, 255, 0.55);
+
+  border-bottom: 1px solid rgba(54, 76, 79, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+.logo {
+  font-weight: bold;
+  color:#111111;
+
+  /* Comic Sans logo */
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  letter-spacing: 0.5px;
+}
+/*
+.logo {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+  letter-spacing: 1px;
+  text-transform: none;
+}
+ */
+
+
+.nav-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 500;
+  margin-left: 1.5rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #0e41f8;
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background: var(--dark-color);
+}
+
+/* ===============================
+   HERO
+================================ */
+.hero {
+  min-height: 80vh;
+  max-width: 900px;
+  margin: auto;
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content {
+  background: rgba(20, 30, 54, 0.55);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 3rem 3.5rem;
+  max-width: 700px;
+  text-align: center;
+  align-self: center;                    /* Unsure card alignment */
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  color: #08ea5b;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #bae6fd;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 500;
+  width: fit-content;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   PROJECT CARDS (WORK PAGE)
+================================ */
+.projects {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem;
+}
+
+/* Work page heading blur box */
+.work-intro {
+  max-width: 1100px;
+  margin: 2rem auto 2.5rem;
+  padding: 2rem 2.5rem;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+.work-intro h2 {
+  color: #ffbe27;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 0.6rem;
+}
+
+.work-intro .project-meta {
+  color: #6eccff;
+  opacity: 0.95;
+}
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  height: 220px;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.card-overlay {
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 10px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.2)
+  );
+}
+
+.card-overlay h3 { font-size: 1.2rem; }
+.card-overlay p { font-size: 0.9rem; }
+.card-overlay span { font-size: 0.75rem; color: #d1fae5; }
+
+/* Card colours */
+.js-card h3 { color: #ffd505; }
+.motion-card h3 { color: #0cff35; }
+.ux-card h3 { color: #ff9d00; }
+.photo-card h3 { color: #36f8ff; }
+.social-card h3 { color: #efff0d; }
+.booklet-card h3 { color: #99ff00; }
+
+/* Card images */
+.js-card { background-image: url("../assets/images/java/system.png"); }
+.motion-card { background-image: url("../assets/images/motion/motion.jpg"); }
+.ux-card { background-image: url("../assets/images/ux/ux.webp"); }
+.photo-card { background-image: url("../assets/images/photography/photography.webp"); }
+.booklet-card { background-image: url("../assets/images/booklet/booklet.jpg"); }
+.social-card { background-image: url("../assets/images/socialMedia/socialmedia.webp"); }
+
+/* ===============================
+   PROJECT PAGE GLOBAL
+================================ */
+.project-page {
+  padding: 3rem 2rem;
+}
+
+.project-intro {
+  max-width: 1100px;
+  margin: 2rem auto 3rem;
+  padding: 2.5rem;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.project-intro h2 {
+  color: #fff4db;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 0.75rem;
+}
+
+.project-meta {
+  color: #22b2ff;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   PROJECT PAGE SECTION TEXT COLOUR
+   (h3 + paragraphs inside blur boxes)
+================================ */
+
+/* Headings inside project sections */
+.project-page .blur-box h3 {
+  color: #000000;   /* text headings */
+}
+
+/* Paragraph text inside project sections */
+.project-page .blur-box p {
+  color: #00163a;   /* lower texts */
+}
+
+/* ===============================
+   REFERENCES PAGE
+================================ */
+
+.reference-list {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.reference-list li {
+  margin: 0.75rem 0;
+  line-height: 1.6;
+}
+
+.reference-list a {
+  color: #2563eb;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.reference-list a:hover {
+  opacity: 0.85;
+}
+/* Center the credit note text */
+.credit-note {
+  text-align: center;
+}
+
+.credit-note p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.credit-note a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+
+
+/* ===============================
+   PHOTOGRAPHY
+================================ */
+.photo-section {
+  max-width: 1400px;
+  margin: 0 auto 4rem;
+  padding: 2.5rem 2rem;
+  background: rgba(189,255,234,0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+}
+
+.photo-nav {
+  position: sticky;
+  top: 90px;
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  background: rgba(132,169,213,0.85);
+  backdrop-filter: blur(5px);
+  padding: 0.75rem 0;
+  margin-bottom: 3rem;
+}
+
+.photo-nav a {
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(132,95,255,0.7);
+  font-size: 0.85rem;
+}
+
+.photo-grid {
+  column-count: 3;
+  column-gap: 2rem;
+}
+
+.photo-grid figure {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+}
+
+.photo-grid img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ===============================
+   MOTION DESIGN
+================================ */
+.motion-section {
+  max-width: 1400px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+.motion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+.blur-box {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.image-box img,
+.video-box video {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.video-box {
+  max-width: 720px;
+}
+
+/* ===============================
+   UX / PERSONA
+================================ */
+.persona-grid { align-items: start; }
+
+.persona-card h4 { color: #00a6ff; }
+
+.persona-quote {
+  font-style: italic;
+  color: #086097;
+}
+
+/* ===============================
+   JAVASCRIPT PROJECT 
+================================ */
+
+/* Sticky JS nav */
+.js-nav {
+  position: sticky;
+  top: 90px;
+  z-index: 10;
+}
+
+/* ===============================
+   USE CASE & FLOW DIAGRAMS
+================================ */
+
+#usecase .motion-grid,
+#flow .motion-grid {
+  display: flex;
+  justify-content: center;
+}
+
+/* Use case diagram */
+#usecase img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* Flowcharts */
+#flow img {
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+}
+
+/* ===============================
+   FINAL SYSTEM – ONE GRID ONLY
+================================ */
+
+/* ===============================
+   FINAL SYSTEM 
+================================ */
+
+#final .final-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 3.5rem;
+  align-items: start;
+  justify-items: center;
+}
+
+/* ===============================
+   FINAL SYSTEM CARDS
+================================ */
+
+/* Shared card */
+#final .image-box,
+#final .flow-box {
+  width: 100%;
+  max-width: 720px;   /* BIGGER cards */
+  text-align: center;
+}
+
+/* Single screenshots */
+#final .image-box img {
+  width: 100%;
+  max-width: 720px;   /* BIG readable */
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+}
+
+/* ===============================
+   FLOW BOX 
+================================ */
+
+#final .flow-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Flow images (VERY IMPORTANT PART) */
+#final .flow-box img {
+  width: 100%;
+  max-width: 680px;   /* larger per step */
+  height: auto;
+  margin: 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Flow caption */
+.flow-caption {
+  font-size: 0.9rem;
+  color: #374151;
+  opacity: 0.9;
+  margin-top: 0.25rem;
+}
+
+/* ===============================
+   MOBILE 
+================================ */
+@media (max-width: 768px) {
+  #final .final-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #final .image-box,
+  #final .flow-box {
+    max-width: 100%;
+  }
+}
+
+/* Flow caption */
+.flow-caption {
+  font-size: 0.85rem;
+  color: #374151;
+  opacity: 0.85;
+}
+
+
+/* ===============================
+   BOOKLET PROJECT
+================================ */
+
+/* Moodboard, sketches, design */
+.motion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* Image boxes */
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   BOOKLET PROJECT
+================================ */
+
+.motion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Image cards */
+.image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   BOOKLET SPREAD LAYOUT
+================================ */
+
+/* ===============================
+   BOOKLET GRID (Cover + Spreads + Back)
+================================ */
+
+.booklet-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* Single page (cover/back) */
+.book-single {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-single img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Double page spread */
+.book-spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.book-spread img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Mobile: spreads become stacked */
+@media (max-width: 768px) {
+  .book-spread {
+    grid-template-columns: 1fr;
+  }
+
+  .book-single img,
+  .book-spread img {
+    max-width: 720px;
+  }
+}
+
+/* ===============================
+   BOOKLET SPREAD + SPINE EFFECT
+================================ */
+
+.book-spread {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr; /* middle column = spine */
+  gap: 0;
+  align-items: center;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.book-spread img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* The spine strip */
+.book-spine {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border-radius: 999px;
+  margin: 0 auto;
+
+  /* fake fold / paper depth */
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.25),
+    rgba(255,255,255,0.35),
+    rgba(0,0,0,0.25)
+  );
+
+  /* extra depth */
+  box-shadow:
+    inset 0 0 12px rgba(0,0,0,0.35),
+    0 0 18px rgba(0,0,0,0.15);
+  opacity: 0.75;
+}
+
+/* make spine match image height better */
+.book-spread img {
+  display: block;
+}
+
+/* Mobile: stack pages, hide spine */
+@media (max-width: 768px) {
+  .book-spread {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .book-spine {
+    display: none;
+  }
+
+  .book-spread img {
+    max-width: 720px;
+  }
+}
+
+/* ===============================
+   BOOKLET – OWN DESIGN SIZE CONTROL
+================================ */
+
+/* design grid /../ bigger columns */
+#design .motion-grid {
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Make image boxes wider */
+#design .image-box {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Make the actual images bigger */
+#design .image-box img {
+  width: 100%;
+  max-width: 900px;   
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 14px;
+}
+/* ===============================
+   SOCIAL MEDIA CAMPAIGN (CRUK)
+================================ */
+
+/* Grid for social media visuals */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Images within social media campaign */
+#overview .image-box img,
+#posts .image-box img,
+#invite .image-box img,
+#event .image-box img {
+  width: 100%;
+  max-width: 840px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+}
+
+/* Invitation image larger */
+#invite .image-box img {
+  max-width: 950px;
+  margin: 0 auto;
+  display: block;
+}
+
+
+
+
+
+
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+
+/* ===============================
+   GLOBAL BUTTON HOVER EFFECT
+   (ALL SECTIONS)
+================================ */
+
+/* Navbar buttons */
+.nav-btn:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* Sticky section nav buttons (Photography, JS, UX, etc.) */
+.photo-nav a:hover,
+.js-nav a:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Any future pill-style buttons */
+.photo-nav a,
+.js-nav a,
+.nav-btn {
+  transition: 
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.photo-nav a:hover,
+.js-nav a:hover,
+.nav-btn:hover {
+  box-shadow: 0 8px 20px rgba(32, 186, 163, 0.35);
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .photo-grid {
+    column-count: 1;
+  }
+}
+
+/* ===============================
+   REFERENCES PAGE
+================================ */
+.reference-list {
+  margin-top: 1.5rem;
+  padding-left: 1.2rem;
+  line-height: 1.8;
+}
+
+.reference-list li {
+  margin-bottom: 0.85rem;
+  color: #0f172a;
+}
+
+.reference-list a {
+  color: #0e41f8;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.reference-list a:hover {
+  color: var(--accent-color);
+}
+
+/* ===============================
+   PROJECT PAGE - LIVE LINK BUTTON FIX
+================================ */
+.project-page .btn {
+  background: #0e41f8;          /* strong visible blue */
+  color: #ffffff !important;
+  border-radius: 999px;
+  padding: 0.85rem 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.35);
+}
+
+.project-page .btn:hover {
+  background: #22c55e;          /* your accent green */
+  transform: translateY(-2px);
+}
+
+/* Make live link readable inside blur-box */
+.project-page .blur-box a {
+  color: #0e41f8;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.project-page .blur-box a:hover {
+  color: #22c55e;
+}
